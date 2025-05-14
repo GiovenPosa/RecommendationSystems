@@ -19,15 +19,15 @@ This project was created to:
 
 This engine predicts and recommends movies to a target user based on prior user ratings using two different techniques:
 
-### 1. **SVD-Based Collaborative Filtering (Model-Based)**
-- Uses matrix factorization from the `surprise` library.
-- Learns latent features to estimate how a user would rate unseen movies.
-- Returns top-N highest-rated predictions for a given user.
-
-### 2. **User-User Collaborative Filtering (Memory-Based)**
+### 1. **User-User Collaborative Filtering (Memory-Based)**
 - Uses `scikit-learn` to compute cosine similarity between users.
 - Predicts ratings based on ratings from similar users.
 - No model training required; recommendations are computed on the fly.
+
+### 2. **SVD-Based Collaborative Filtering (Model-Based)**
+- Uses matrix factorization from the `surprise` library.
+- Learns latent features to estimate how a user would rate unseen movies.
+- Returns top-N highest-rated predictions for a given user.
 
 ---
 
