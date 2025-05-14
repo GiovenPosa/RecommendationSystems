@@ -81,6 +81,6 @@ Each time I run the loop, a different seed and RSME list is returned. This is wh
 | Doesnt show vairability in results | Noticeable stability of the model during testing |
 | Might overfit to that specific test set | Less liekly to overfit on multiple folds |
 
-*Notes: Some considerations I need to test include: testing with different fold metrics; compare standard deviation of RSMEs across folds, use other metrics for recommendation like 'time-stamp', 'genre', etc; and improve the current dataset. 
+*Note: Some considerations I need to test include: testing with different fold metrics; compare standard deviation of RSMEs across folds, use other metrics for recommendation like 'time-stamp', 'genre', etc; and improve the current dataset.*
 
  
