@@ -44,11 +44,12 @@ As a Master’s student in Computer Science preparing for a career in AI-powered
  ### 🧠 Key Concepts Explored
 
 1. Matrix Factorization (SVD)
-2. Collaborative Filtering
-3. Cosine Similarity
-4. Cold Start Problem
-5. Evaluation Techniques
-6. Data Sparsity Handling
+2. Cross Validation Techniques
+3. Collaborative Filtering
+4. Cosine Similarity
+5. Cold Start Problem
+6. Evaluation Techniques
+7. Data Sparsity Handling
 
 ---
 
@@ -71,6 +72,15 @@ I wrote utility functions to outpur and compare top recommendations between both
 After doing some research, I was introducde to a method of analysing RSME and MAE. I randomly loaded in 20 - 50 unique seed states into an array and initialised the SVD model in a loop, iterating and returning the result of each unique seed.
 Lowest seeds tend to suggest a better-performing model - it predicts ratings most accurately (but i am not sure how reliable this theory is). 
 
-Each time I run the loop, a different seed and RSME list is returned. 
+Each time I run the loop, a different seed and RSME list is returned. This is where I pivoted from using `train_test_split` and explored the use of `cross_validation` at `cv=5` to evaluate the model multiple times on different splits of the dataset (average the results). 
+
+| Problems with Single-Split | Solution via Cross-Validation |
+|-----------------|-------------|
+| Performance may depend on which data got into the test set | Multiple test sets are used |
+| A lucky or unlucky test split might be misleading | Averages smooth out randomness |
+| Doesnt show vairability in results | Noticeable stability of the model during testing |
+| Might overfit to that specific test set | Less liekly to overfit on multiple folds |
+
+*Notes: Some considerations I need to test include: testing with different fold metrics; compare standard deviation of RSMEs across folds, use other metrics for recommendation like 'time-stamp', 'genre', etc; and improve the current dataset. 
 
  
