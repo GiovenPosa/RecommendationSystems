@@ -1,6 +1,8 @@
 # 🎬 Movie Recommendation Engine
 
-A dual-model recommendation system built in Python using **SVD matrix factorization** and **user-based collaborative filtering**, developed as part of my self-directed learning in applied AI and data science.
+A multi-model movie recommendation system built in Python using **SVD matrix factorization**, user-based **collaborative filtering**, and **content-based filtering**. Developed as part of my self-directed learning in applied AI and data science, this project explores the strengths and limitations of different recommendation approaches.
+
+The engine is designed with modularity in mind to support future expansion into **hybrid recommendation** systems that intelligently combine collaborative and content-based signals. As part of this ongoing development, I aim to compare the **robustness**, **accuracy**, and **cold-start handling** of each method, evaluating their performance in different data sparsity and user interaction scenarios.
 
 ---
 
@@ -29,6 +31,12 @@ This engine predicts and recommends movies to a target user based on prior user 
 - Learns latent features to estimate how a user would rate unseen movies.
 - Returns top-N highest-rated predictions for a given user.
 
+### 3.	Content-Based Filtering (Memory-Based)
+- Builds a user profile based on genres of movies they’ve rated highly (≥ 4).
+- Uses rating-weighted genre frequency to personalize recommendations.
+- Scores and ranks unseen movies by comparing genre overlap with the user’s preferences.
+- Normalizes and returns top-N movies aligned with the user’s taste.
+
 ---
 
 ## 🎯 Why I Built This
@@ -46,10 +54,12 @@ As a Master’s student in Computer Science preparing for a career in AI-powered
 1. Matrix Factorization (SVD)
 2. Cross Validation Techniques
 3. Collaborative Filtering
-4. Cosine Similarity
-5. Cold Start Problem
-6. Evaluation Techniques
-7. Data Sparsity Handling
+5. Cosine Similarity
+6. Cold Start Problem
+7. Evaluation Techniques
+8. Data Sparsity Handling
+9. Content-Based Filtering
+10. User-Profiling
 
 ---
 
