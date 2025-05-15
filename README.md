@@ -9,8 +9,9 @@ The engine is designed with modularity in mind to support future expansion into 
 ## 🧠 Project Purpose
 
 This project was created to:
-- Deepen my understanding of **collaborative filtering** techniques in AI.
+- Deepen my understanding of **collaborative filtering** and **conten-based filtering** techniques in AI.
 - Explore both **model-based** and **memory-based** recommender systems.
+- Analyse the effectiveness of **hybrid engines** by combining these two approaches.
 - Build a working prototype that mirrors real-world recommendation engines.
 - Demonstrate my growing skills in **machine learning, Python**, and **data analysis**.
 - Extend my Master's-level academic learning with practical application.
