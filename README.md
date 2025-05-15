@@ -73,8 +73,16 @@ I merged user ratings with movie metdadata using pandas and normalised inputs fo
 ### 2. User-User Collaborative Filtering with Cosin Similarity
 Built a manual implementation using `sklearn.metrics.pairwise.cosing_similarity` on ratings matrix. I found this good but I wanted to test how good the results are by comparing it to a different technique model.
 
+#### Sparsity Check
+After checking for sparsity of the user dataset, I have learned that the current dataset *Extended_Movie_data.csv* scores very highly (>95%) in the sparsity of **97%**, which means that most users have not rated most movies - not ideal for user-based CF as it relies on rating overlap (since I'm currently limited to ratings for user data). This is my code to check for ratings sparsity: 
+```
+ratings_matrix = movies_df.pivot_table(index='User_ID', columns='Movie_ID', values='Rating')
+sparsity = 1.0 - (ratings_matrix.count().sum() / (ratings_matrix.shape[0] * ratings_matrix.shape[1]))
+print(f"Matrix Sparsity: {sparsity:.2%}")
+```
+
 ### 3. SVD Integration
-I decided that I wanted to use a matrix factorization technique used in machine learning for dimensionality reduction, noise reduction, and feature extraction. I used the surpirce library to fit a MF model using the same dataset.
+I decided that I wanted to use a matrix factorization technique used in machine learning for dimensionality reduction, noise reduction, and feature extraction. I used the surpirce library to fit a MF model using the same dataset. 
 
 ### 4. Testing and Comparison
 I wrote utility functions to outpur and compare top recommendations between both approaches for the same user at multiple iterations. I was not confident on how relaible the results are with SVD so i explored further on how **seed** can affect results.
@@ -93,5 +101,7 @@ Each time I run the loop, a different seed and RSME list is returned. This is wh
 | Might overfit to that specific test set | Less liekly to overfit on multiple folds |
 
 *Note: Some considerations I need to test include: testing with different fold metrics; compare standard deviation of RSMEs across folds, use other metrics for recommendation like 'time-stamp', 'genre', etc; and improve the current dataset.*
+
+### 6. First Steps Into Hybrid Engine (Memory Based) 
 
  
